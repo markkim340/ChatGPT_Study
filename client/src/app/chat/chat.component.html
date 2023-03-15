@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Simple Project Using ChatGPT</h1>
+  <div class="form">
+    <label for="sentence-input">Enter Sentence:</label>
+    <textarea
+      [(ngModel)]="sentence"
+      type="text"
+      id="sentence-input"
+      placeholder="Enter your sentence here"
+    >
+    </textarea>
+    <button id="translate-btn" (click)="summarize()">내용 요약하기</button>
+    <button id="translate-btn" (click)="translate()">내용 번역하기</button>
+  </div>
+  <div class="result">
+    <label for="sentence-input">result:</label>
+    <div class="sentence-output">
+      <p>{{ translation }}{{ summary }}</p>
+    </div>
+  </div>
+</div>
