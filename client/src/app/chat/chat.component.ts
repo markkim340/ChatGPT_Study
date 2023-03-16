@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./chat.component.css'],
 })
 export class ChatComponent {
-  private apiUrl = 'http://127.0.0.1:3000/api';
+  private apiUrl = 'http://13.124.250.171:3000/api';
   requestSentence: string;
   responseFromChatGpt: string;
   isLoading = false;
