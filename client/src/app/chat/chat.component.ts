@@ -7,25 +7,33 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./chat.component.css'],
 })
 export class ChatComponent {
-  sentence: string;
-  translation: string;
-  summary: string;
+  private apiUrl = 'http://localhost:3000/api';
+  requestSentence: string;
+  responseFromChatGpt: string;
+  isLoading = false;
 
   constructor(private http: HttpClient) {}
 
-  translate() {
-    this.http
-      .post('/translate', { sentence: this.sentence })
-      .subscribe((response: any) => {
-        this.translation = response.translation;
-      });
-  }
-
-  summarize() {
-    this.http
-      .post('/summarize', { sentence: this.sentence })
-      .subscribe((response: any) => {
-        this.summary = response.summary;
-      });
+  requestToChatGpt(option: string) {
+    try {
+      if (!this.requestSentence) {
+        alert('Please enter a sentence');
+        throw new Error('Not Found Sentence Error');
+      }
+      this.isLoading = true;
+      this.http
+        .post(
+          `${this.apiUrl}/chatgpt`,
+          { sentence: this.requestSentence, option: option },
+          { responseType: 'text' }
+        )
+        .subscribe((response: string) => {
+          this.responseFromChatGpt = response;
+          this.isLoading = false;
+        });
+    } catch (error) {
+      console.log(error);
+      this.isLoading = false;
+    }
   }
 }

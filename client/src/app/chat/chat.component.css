@@ -13,7 +13,7 @@
 label {
   margin-bottom: 10px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 textarea {
@@ -21,15 +21,15 @@ textarea {
   height: 200px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   resize: none;
 }
 
 button {
   padding: 10px;
-  margin-top: 10px;
+  margin: 10px;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -42,11 +42,31 @@ button {
   height: 200px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   resize: none;
+  background-color: #ffffff;
 }
 
 p {
   margin: none;
   text-align: left;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

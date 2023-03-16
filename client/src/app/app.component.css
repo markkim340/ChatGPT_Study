@@ -1,0 +1,6 @@
+.div-container {
+  height: 100vh;
+  background: url("https://www.codewithrandom.com/wp-content/uploads/2022/10/Number-Guessing-Game-using-JavaScript-3.png")
+    no-repeat center fixed;
+  background-size: cover;
+}
